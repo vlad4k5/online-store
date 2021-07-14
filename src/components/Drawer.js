@@ -1,28 +1,20 @@
-import btn_checked from "../assets/img/btn_checked.svg"
-import btn_remove from "../assets/img/btn_remove.svg"
-import arrow from "../assets/img/arrow.svg"
 
-import sneakers1 from "../assets/sneakers/1.jpg"
-import sneakers2 from "../assets/sneakers/2.jpg"
-import sneakers3 from "../assets/sneakers/3.jpg"
-import sneakers4 from "../assets/sneakers/4.jpg"
-import sneakers5 from "../assets/sneakers/5.jpg"
 
 const Drawer = () => {
     return <div style={{ display: 'none' }} className="overlay">
         <div className="drawer">
-            <h2 className="cart">Корзина <img src={btn_remove} /></h2>
+            <h2 className="cart">Корзина <img src={"/img/btn_remove.svg"} /></h2>
 
 
             <div className="items">
                 <div className="cartItem">
-                    <img className="cartImage" alt="sneakers" src={sneakers1} />
+                    <img className="cartImage" alt="sneakers" src={"/img/sneakers/1.jpg"} />
                     <div>
                         <p>Мужские Кроссовки Nike Air Max 270</p>
                         <b>12999 руб.</b>
                     </div>
 
-                    <img src={btn_remove} alt="Remove" className="btn_remove" />
+                    <img src={"/img/btn_remove.svg"} alt="Remove" className="btn_remove" />
                 </div>
             </div>
 
@@ -39,7 +31,7 @@ const Drawer = () => {
                     <div></div>
                     <b>1074 руб.</b>
                 </li>
-                <button className="btn_order">Оформить заказ<img src={arrow} alt="Arrow" className="orderArrow" /></button>
+                <button className="btn_order">Оформить заказ<img src={"/img/arrow.svg"} alt="Arrow" className="orderArrow" /></button>
             </ul>
         </div>
     </div >
