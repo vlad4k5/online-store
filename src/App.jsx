@@ -1,7 +1,7 @@
 import './index.scss'
 
 
-import Card from './components/Card'
+import Card from './components/Card/Card'
 import Header from './components/Header'
 import Drawer from './components/Drawer'
 

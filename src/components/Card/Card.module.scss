@@ -1,0 +1,46 @@
+.card{
+    padding: 25px;
+    min-width: 210px;
+    height: 260px;
+    background: #FFFFFF;
+    border: 1px solid #F3F3F3;
+    border-radius: 40px;
+    align-items: center;
+    &:hover{
+      border: 1px solid #F8F8F8;
+      box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.05);
+      transition: 0.2s;
+      transform: translateY(-5px);
+    }
+    .favorite{
+      position: absolute;
+      cursor: pointer;
+    }
+  }
+  .card_Bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    .card_Bottom-price{
+      margin: 0;
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 13px;
+      color: #BDBDBD;
+    }
+  
+    .card_Bottom-button{
+      width: 32px;
+      height: 32px;
+      background: #FFFFFF;
+      border: 1px solid #F2F2F2;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .plus {
+      cursor: pointer;
+    }
+    
+  }
+  
