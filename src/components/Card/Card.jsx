@@ -2,16 +2,33 @@ import { useState } from "react"
 import s from "./Card.module.scss"
 
 
-const Card = ({ price, title, imgUrl, id, onFavorite, onPlus }) => {
+const Card = ({ price, title, imgUrl, onFavorite, onPlus }) => {
 
+    const [isLiked, setIsLiked] = useState(false)
     const [isAdded, setIsAdded] = useState(false)
+
+
+
     const onClickPlus = () => {
-        onPlus({ price, title, imgUrl, id })
+        onPlus({ price, title, imgUrl })
         setIsAdded(!isAdded)
     }
 
-    return <div className={s.card} key={id}>
-        <img src={"/img/heart_unliked.svg"} alt="Heart Unliked" className={s.favorite} onClick={onFavorite} />
+    const onClickFavorite = () => {
+        setIsLiked(!isLiked)
+    }
+
+    console.log(isLiked);
+
+
+
+    return <div className={s.card}>
+        <img
+            src={isLiked ? "/img/liked.svg" : "/img/unliked.svg"}
+            alt="Heart Unliked"
+            className={s.favorite}
+            onClick={onClickFavorite}
+        />
         <img width={133} height={112} alt="Sneakers" src={imgUrl} />
         <p>{title}</p>
         <div className={s.card_Bottom}>

@@ -12,6 +12,7 @@ const Header = ({ onClickCart }) => {
         </div>
         <ul className={s.headerRight}>
             <li onClick={onClickCart} ><img src={"/img/cart.svg"} alt="cart" /><span>1205 руб.</span></li>
+            <li><img src={"/img/heart.svg"} alt="heart" /></li>
             <li><img src={"/img/user.png"} alt="user" /></li>
         </ul>
     </header>
