@@ -17,27 +17,22 @@
       cursor: pointer;
     }
   }
+
+
+  
   .card_Bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
   
-    .card_Bottom-price{
+    .card_Bottom_price{
       margin: 0;
       font-weight: 500;
       font-size: 11px;
       line-height: 13px;
       color: #BDBDBD;
     }
-  
-    .card_Bottom-button{
-      width: 32px;
-      height: 32px;
-      background: #FFFFFF;
-      border: 1px solid #F2F2F2;
-      border-radius: 8px;
-      cursor: pointer;
-    }
+
     .plus {
       cursor: pointer;
     }

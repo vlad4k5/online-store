@@ -1,21 +1,26 @@
 
 
-const Drawer = () => {
-    return <div style={{ display: 'none' }} className="overlay">
+const Drawer = ({ onClose, items = [] }) => {
+    console.log(items)
+
+
+    return <div className="overlay">
         <div className="drawer">
-            <h2 className="cart">Корзина <img src={"/img/btn_remove.svg"} /></h2>
+            <h2 className="cart">Корзина <img alt="Close" src={"/img/btn_remove.svg"} onClick={onClose} /></h2>
 
 
             <div className="items">
-                <div className="cartItem">
-                    <img className="cartImage" alt="sneakers" src={"/img/sneakers/1.jpg"} />
+                {items.map(item => <div className="cartItem">
+                    <img className="cartImage" alt="sneakers" src={item.imgUrl} />
                     <div>
-                        <p>Мужские Кроссовки Nike Air Max 270</p>
-                        <b>12999 руб.</b>
+                        <p>{item.title}</p>
+                        <b>{item.price} руб.</b>
                     </div>
 
                     <img src={"/img/btn_remove.svg"} alt="Remove" className="btn_remove" />
                 </div>
+                )}
+
             </div>
 
 
