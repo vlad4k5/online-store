@@ -3,31 +3,27 @@ import { AppContext } from "../../App"
 import s from "./Card.module.scss"
 
 
-const Card = ({ id, price, title, imgUrl, onFavorite, onPlus, favorited = false, added = false }) => {
+const Card = ({ id, itemId, price, title, imgUrl, onFavorite, onPlus }) => {
 
-    const { isItemAdded } = useContext(AppContext)
-
-    const [isLiked, setIsLiked] = useState(favorited)
-
+    const { isItemAdded, isItemFavorite } = useContext(AppContext)
 
 
     const onClickPlus = () => {
-        onPlus({ price, title, imgUrl, id })
+        onPlus({ price, title, imgUrl, itemId })
     }
 
     const onClickFavorite = () => {
-        onFavorite({ price, title, imgUrl, id });
-        setIsLiked(!isLiked)
+        onFavorite({ price, title, imgUrl, itemId });
     }
 
 
-    console.log(isItemAdded(id))
+    console.log(isItemFavorite(itemId))
 
 
     return <div className={s.card}>
 
         <img
-            src={isLiked ? "/img/liked.svg" : "/img/unliked.svg"}
+            src={isItemFavorite(itemId) ? "/img/liked.svg" : "/img/unliked.svg"}
             alt="Heart Unliked"
             className={s.favorite}
             onClick={onClickFavorite}
@@ -41,7 +37,7 @@ const Card = ({ id, price, title, imgUrl, onFavorite, onPlus, favorited = false,
                 <b>{price} руб.</b>
             </div>
             <div>
-                <img onClick={onClickPlus} width={32} height={32} src={isItemAdded(id) ? "/img/btn_checked.svg" : "/img/plus.svg"} alt="add item" className={s.plus} />
+                <img onClick={onClickPlus} width={32} height={32} src={isItemAdded(itemId) ? "/img/btn_checked.svg" : "/img/plus.svg"} alt="add item" className={s.plus} />
             </div>
         </div>
 

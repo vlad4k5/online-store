@@ -24,10 +24,9 @@ const Home = ({ searchValue, items, onAddToFavorites, onAddToCart, setSearchValu
         <div className="sneakers">
             {isLoading ? [...Array(10)].map((i, index) => <LoadingCard key={index} />) : items.filter(i => i.title.toLowerCase().includes(searchValue.toLowerCase())).map(i =>
                 <Card
-                    key={i.id}
+                    key={i.itemId}
                     onFavorite={(obj) => { onAddToFavorites(obj) }}
                     onPlus={(obj) => onAddToCart(obj)}
-                    // added={cartItems.some(obj => Number(obj.id) === Number(i.id))}
                     {...i}
                 />)}
         </div>

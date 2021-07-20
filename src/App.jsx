@@ -6,6 +6,7 @@ import axios from 'axios'
 import { Route, Switch } from 'react-router-dom'
 import Home from './pages/Home'
 import Favorites from './pages/Favorites'
+import Orders from './pages/Orders'
 
 
 
@@ -26,16 +27,20 @@ function App() {
   }
   useEffect(() => {
     const fetchData = async () => {
-
-      setIsLoading(true);
-      const cartResponse = await axios.get("https://60f2d6c76d44f300177887b8.mockapi.io/cart")
-      const favoritesResponse = await axios.get("https://60f2d6c76d44f300177887b8.mockapi.io/favorites")
-      const itemsResponse = await axios.get("https://60f2d6c76d44f300177887b8.mockapi.io/items")
-
-      setIsLoading(false)
-      setCartItems(cartResponse.data)
-      setFavorites(favoritesResponse.data)
-      setItmes(itemsResponse.data)
+      try {
+        const [cartResponse, favoritesResponse, itemsResponse] = await Promise.all([
+          axios.get("https://60f2d6c76d44f300177887b8.mockapi.io/cart"),
+          axios.get("https://60f2d6c76d44f300177887b8.mockapi.io/favorites"),
+          axios.get("https://60f2d6c76d44f300177887b8.mockapi.io/items")
+        ])
+        setIsLoading(false)
+        setCartItems(cartResponse.data)
+        setFavorites(favoritesResponse.data)
+        setItmes(itemsResponse.data)
+      }
+      catch (error) {
+        alert("Ошибка при заросе данных")
+      }
     }
     fetchData()
   }, [])
@@ -44,9 +49,9 @@ function App() {
 
   const onAddToCart = async (obj) => {
     try {
-      if (cartItems.find(item => Number(item.id) === Number(obj.id))) {
-        axios.delete(`https://60f2d6c76d44f300177887b8.mockapi.io/cart/${obj.id}`)
-        setCartItems(prev => prev.filter(item => Number(item.id) !== Number(obj.id)))
+      if (cartItems.find(item => item.itemId === obj.itemId)) {
+        const elem = cartItems.find(item => item.itemId === obj.itemId)
+        onRemoveItem(elem.id)
       } else {
         const res = await axios.post("https://60f2d6c76d44f300177887b8.mockapi.io/cart", obj)
         setCartItems(prev => [...prev, res.data])
@@ -65,11 +70,11 @@ function App() {
 
 
   const onAddToFavorites = async (obj) => {
+    debugger
     try {
-      console.log(obj)
-      if (favorites.find(item => item.id === obj.id)) {
-        axios.delete(`https://60f2d6c76d44f300177887b8.mockapi.io/favorites/${obj.id}`)
-        setFavorites(prev => prev.filter(item => item.id !== obj.id))
+      if (favorites.find(item => item.itemId === obj.itemId)) {
+        const elem = favorites.find(item => item.itemId === obj.itemId)
+        onRemoveFavorite(elem.id)
       } else {
         const res = await axios.post("https://60f2d6c76d44f300177887b8.mockapi.io/favorites", obj)
         setFavorites(prev => [...prev, res.data])
@@ -81,18 +86,27 @@ function App() {
   }
 
 
-
-
-
-
-  const isItemAdded = (id) => {
-    return cartItems.some(obj => Number(obj.id) === Number(id))
+  const onRemoveFavorite = (id) => {
+    axios.delete(`https://60f2d6c76d44f300177887b8.mockapi.io/favorites/${id}`);
+    setFavorites(prev => prev.filter(item => item.id !== id))
   }
 
 
 
+
+
+  const isItemAdded = (itemId) => {
+    return cartItems.some(obj => obj.itemId === itemId)
+  }
+  const isItemFavorite = (itemId) => {
+    return favorites.some(obj => obj.itemId === itemId)
+  }
+
+
+
+
   return (
-    <AppContext.Provider value={{ items, cartItems, favorites, isItemAdded }}>
+    <AppContext.Provider value={{ items, cartItems, favorites, isItemAdded, isItemFavorite }}>
       <div className="wrapper">
 
         {cartOpened && <Drawer onClose={() => { setCartOpened(false) }} items={cartItems} onRemove={(id) => onRemoveItem(id)} setCartItems={setCartItems} />}
@@ -101,6 +115,7 @@ function App() {
         <Switch>
           <Route path="/test" render={() => <div>Hello world</div>} />
           <Route path="/favorites" render={() => <Favorites onFavorite={onAddToFavorites} />} />
+          <Route path="/orders" render={() => <Orders />} />
           <Route exact path="/" render={() => <Home searchValue={searchValue} items={items} onAddToFavorites={onAddToFavorites} onAddToCart={onAddToCart} setSearchValue={setSearchValue} onChangeSearchInput={onChangeSearchInput} cartItems={cartItems} isLoading={isLoading} />} />
         </Switch>
       </div >

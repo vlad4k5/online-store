@@ -10,9 +10,13 @@ const Drawer = ({ onClose, items = [], onRemove, setCartItems }) => {
     const [orderId, setOrderId] = useState(null)
     const [isorderComleted, setIsOrderCompleted] = useState(false)
 
+
+    const cartPrice = items.reduce((sum, obj) => obj.price + sum, 0)
+    const discount = Math.round(cartPrice * 0.05)
+    const totalPrice = cartPrice - discount
+
     const onClickOrder = async () => {
         try {
-            debugger
             const res = await axios.post("https://60f2d6c76d44f300177887b8.mockapi.io/orders", { items: cartItems });
             console.log(res.data)
             setOrderId(res.data.id)
@@ -55,12 +59,12 @@ const Drawer = ({ onClose, items = [], onRemove, setCartItems }) => {
                         <li>
                             <span>Итого:</span>
                             <div></div>
-                            <b> 21 498 руб.</b>
+                            <b> {totalPrice} руб.</b>
                         </li>
                         <li>
                             <span>Скидка 5%:</span>
                             <div></div>
-                            <b>1074 руб.</b>
+                            <b>{discount} руб.</b>
                         </li>
                         <button onClick={onClickOrder} className={s.btn_order}>Оформить заказ<img src={"/img/arrow_right.svg"} alt="Arrow" className={s.orderArrow} /></button>
                     </ul>
