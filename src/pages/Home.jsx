@@ -1,13 +1,13 @@
 import Card from "../components/Card/Card"
+import LoadingCard from "../components/Card/LoadingCard"
 
 
 
 
 
-const Home = ({ searchValue, items, onAddToFavorites, onAddToCart, setSearchValue, onChangeSearchInput }) => {
+const Home = ({ searchValue, items, onAddToFavorites, onAddToCart, setSearchValue, onChangeSearchInput, cartItems, isLoading }) => {
+
     return <div className="content">
-
-
 
         <div className="search-wrapper">
             <div>
@@ -21,13 +21,13 @@ const Home = ({ searchValue, items, onAddToFavorites, onAddToCart, setSearchValu
         </div>
 
 
-
         <div className="sneakers">
-            {items.filter(i => i.title.toLowerCase().includes(searchValue.toLowerCase())).map(i =>
+            {isLoading ? [...Array(10)].map((i, index) => <LoadingCard key={index} />) : items.filter(i => i.title.toLowerCase().includes(searchValue.toLowerCase())).map(i =>
                 <Card
                     key={i.id}
                     onFavorite={(obj) => { onAddToFavorites(obj) }}
                     onPlus={(obj) => onAddToCart(obj)}
+                    // added={cartItems.some(obj => Number(obj.id) === Number(i.id))}
                     {...i}
                 />)}
         </div>

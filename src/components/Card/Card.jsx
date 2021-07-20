@@ -1,17 +1,18 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { AppContext } from "../../App"
 import s from "./Card.module.scss"
 
 
-const Card = ({ id, price, title, imgUrl, onFavorite, onPlus, favorited = false }) => {
+const Card = ({ id, price, title, imgUrl, onFavorite, onPlus, favorited = false, added = false }) => {
+
+    const { isItemAdded } = useContext(AppContext)
 
     const [isLiked, setIsLiked] = useState(favorited)
-    const [isAdded, setIsAdded] = useState(false)
 
 
 
     const onClickPlus = () => {
-        onPlus({ price, title, imgUrl })
-        setIsAdded(!isAdded)
+        onPlus({ price, title, imgUrl, id })
     }
 
     const onClickFavorite = () => {
@@ -20,8 +21,11 @@ const Card = ({ id, price, title, imgUrl, onFavorite, onPlus, favorited = false 
     }
 
 
+    console.log(isItemAdded(id))
+
 
     return <div className={s.card}>
+
         <img
             src={isLiked ? "/img/liked.svg" : "/img/unliked.svg"}
             alt="Heart Unliked"
@@ -37,9 +41,12 @@ const Card = ({ id, price, title, imgUrl, onFavorite, onPlus, favorited = false 
                 <b>{price} руб.</b>
             </div>
             <div>
-                <img onClick={onClickPlus} width={32} height={32} src={isAdded ? "/img/btn_checked.svg" : "/img/plus.svg"} alt="add item" className={s.plus} />
+                <img onClick={onClickPlus} width={32} height={32} src={isItemAdded(id) ? "/img/btn_checked.svg" : "/img/plus.svg"} alt="add item" className={s.plus} />
             </div>
         </div>
+
+
+
     </div>
 }
 
