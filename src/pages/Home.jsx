@@ -1,11 +1,7 @@
 import Card from "../components/Card/Card"
 import LoadingCard from "../components/Card/LoadingCard"
 
-
-
-
-
-const Home = ({ searchValue, items, onAddToFavorites, onAddToCart, setSearchValue, onChangeSearchInput, cartItems, isLoading }) => {
+const Home = ({ searchValue, items, onAddToFavorites, onAddToCart, setSearchValue, onChangeSearchInput, isLoading }) => {
 
     return <div className="content">
 
@@ -30,11 +26,6 @@ const Home = ({ searchValue, items, onAddToFavorites, onAddToCart, setSearchValu
                     {...i}
                 />)}
         </div>
-
-
     </div>
 }
-
-
-
 export default Home

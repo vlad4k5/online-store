@@ -12,8 +12,6 @@ body {
 }
 
 
-
-
 .wrapper{
   background-color:#FFFFFF;
   width: 1080px;
@@ -22,12 +20,20 @@ body {
   border-radius: 20px;
 }
 
-
-
 .content {
   padding: 45px 60px 60px 60px;
   h1{
     margin: 0;
+  }
+  .page_title{
+    margin-bottom: 40px;
+    padding-left: 20px;
+  }
+  .title_img{
+    position: relative;
+    top: 7px;
+    left: -20px;
+    cursor: pointer;
   }
 }
 
@@ -44,25 +50,22 @@ body {
   justify-content: space-between;
   margin-bottom: 40px;
 }
-
-
-
-
 .search-block {
   position: relative;
   display: flex;
   border: 1px solid #F3F3F3;
   border-radius: 10px;
   padding: 0 0 0 15px;
+
   input {
     border: 0;
     padding: 13px;
     font-size: 16px;
     line-height: 17px;
     width: 200px;
-  }
-  input:focus{
-    outline: 0;
+    &:focus{
+      outline: 0;
+    }
   }
 
   .clearSearch{

@@ -1,9 +1,5 @@
-
 import ContentLoader from "react-content-loader"
 import s from "./Card.module.scss"
-
-
-
 
 const LoadingCard = () => {
     return <div className={s.card}>
@@ -24,6 +20,4 @@ const LoadingCard = () => {
         </ContentLoader>
     </div>
 }
-
-
 export default LoadingCard
