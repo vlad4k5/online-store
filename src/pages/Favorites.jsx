@@ -38,7 +38,7 @@ const Favorites = ({ onFavorite, onPlus, isLoading }) => {
                     imgHeight={70}
                     title={"Закладок нет :("}
                     description={"Вы ничего не добавляли в закладки"}
-                    image={"/img/emoji_no_favorites.jpg"}
+                    image={"img/emoji_no_favorites.jpg"}
                     onClose={() => <Redirect to="/" />}
                 />
             </div>

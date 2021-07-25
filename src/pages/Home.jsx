@@ -10,8 +10,8 @@ const Home = ({ searchValue, items, onAddToFavorites, onAddToCart, setSearchValu
                 <h1 id="content-title">{searchValue ? `Поиск по "${searchValue}":` : "Все кроссовки"}</h1>
             </div>
             <div className="search-block">
-                <img alt="Search" src="/img/search.svg" />
-                {searchValue && <img alt="Delete" src="/img/btn_remove.svg" className="clearSearch" onClick={() => setSearchValue("")} />}
+                <img alt="Search" src="img/search.svg" />
+                {searchValue && <img alt="Delete" src="img/btn_remove.svg" className="clearSearch" onClick={() => setSearchValue("")} />}
                 <input placeholder="Поиск..." onChange={onChangeSearchInput} value={searchValue} />
             </div>
         </div>
