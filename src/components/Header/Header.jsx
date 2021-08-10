@@ -2,7 +2,10 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../../App";
 import s from "./Header.module.scss"
-
+import logo from "../../assets/img/logo.png"
+import cart from "../../assets/img/cart.svg"
+import heart from "../../assets/img/heart.svg"
+import user from "../../assets/img/user.png"
 const Header = ({ onClickCart }) => {
 
     const { cartItems } = useContext(AppContext)
@@ -11,7 +14,7 @@ const Header = ({ onClickCart }) => {
     return <header>
         <Link to="">
             <div className={s.headerLeft}>
-                <img className={s.imgLogo} alt="Logo" src={"img/logo.png"} />
+                <img className={s.imgLogo} alt="Logo" src={logo} />
                 <div className={s.headerInfo}>
                     <h3>React-Sneakers</h3>
                     <p>Магазин лучших кроссовок</p>
@@ -19,9 +22,9 @@ const Header = ({ onClickCart }) => {
             </div>
         </Link>
         <ul className={s.headerRight}>
-            <li onClick={onClickCart} ><img src={"img/cart.svg"} alt="cart" /><span>{cartTotalPrice ? `${cartTotalPrice} грн.` : null} </span></li>
-            <li><Link to="/favorites"><img src={"img/heart.svg"} alt="heart" /></Link></li>
-            <li><Link to="/orders"><img src={"img/user.png"} alt="user" /></Link></li>
+            <li onClick={onClickCart} ><img src={cart} alt="cart" /><span>{cartTotalPrice ? `${cartTotalPrice} грн.` : null} </span></li>
+            <li><Link to="/favorites"><img src={heart} alt="heart" /></Link></li>
+            <li><Link to="/orders"><img src={user} alt="user" /></Link></li>
         </ul>
     </header>
 }

@@ -1,20 +1,19 @@
 body {
   font-size: 14px;
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #e7f6ff;
 }
 * {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   box-sizing: border-box;
 }
 
-
-.wrapper{
-  background-color:#FFFFFF;
-  width: 1080px;
+.wrapper {
+  background-color: #ffffff;
+  max-width: 1080px;
   min-height: 1000px;
   margin: 50px auto 0px auto;
   border-radius: 20px;
@@ -22,14 +21,14 @@ body {
 
 .content {
   padding: 45px 60px 60px 60px;
-  h1{
+  h1 {
     margin: 0;
   }
-  .page_title{
+  .page_title {
     margin-bottom: 40px;
     padding-left: 20px;
   }
-  .title_img{
+  .title_img {
     position: relative;
     top: 7px;
     left: -20px;
@@ -43,8 +42,7 @@ body {
   gap: 40px;
 }
 
-
-.search-wrapper{
+.search-wrapper {
   display: flex;
   justify-items: center;
   justify-content: space-between;
@@ -53,7 +51,7 @@ body {
 .search-block {
   position: relative;
   display: flex;
-  border: 1px solid #F3F3F3;
+  border: 1px solid #f3f3f3;
   border-radius: 10px;
   padding: 0 0 0 15px;
 
@@ -63,17 +61,24 @@ body {
     font-size: 16px;
     line-height: 17px;
     width: 200px;
-    &:focus{
+    &:focus {
       outline: 0;
     }
   }
 
-  .clearSearch{
+  .clearSearch {
     width: 18px;
     height: 18px;
     position: absolute;
     top: 13px;
     right: 5px;
     cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .wrapper {
+    margin-top: 10px;
+    border-radius: 20px;
   }
 }
