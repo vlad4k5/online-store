@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/online-store/static/css/main.fc0ddb85.chunk.css",
+    "main.css": "/online-store/static/css/main.72e19a23.chunk.css",
     "main.js": "/online-store/static/js/main.c775c751.chunk.js",
     "main.js.map": "/online-store/static/js/main.c775c751.chunk.js.map",
     "runtime-main.js": "/online-store/static/js/runtime-main.116c8d1b.js",
@@ -8,7 +8,7 @@
     "static/js/2.9388e42c.chunk.js": "/online-store/static/js/2.9388e42c.chunk.js",
     "static/js/2.9388e42c.chunk.js.map": "/online-store/static/js/2.9388e42c.chunk.js.map",
     "index.html": "/online-store/index.html",
-    "static/css/main.fc0ddb85.chunk.css.map": "/online-store/static/css/main.fc0ddb85.chunk.css.map",
+    "static/css/main.72e19a23.chunk.css.map": "/online-store/static/css/main.72e19a23.chunk.css.map",
     "static/js/2.9388e42c.chunk.js.LICENSE.txt": "/online-store/static/js/2.9388e42c.chunk.js.LICENSE.txt",
     "static/media/cart.5113b08f.svg": "/online-store/static/media/cart.5113b08f.svg",
     "static/media/heart.6f208ae4.svg": "/online-store/static/media/heart.6f208ae4.svg"
@@ -16,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.116c8d1b.js",
     "static/js/2.9388e42c.chunk.js",
-    "static/css/main.fc0ddb85.chunk.css",
+    "static/css/main.72e19a23.chunk.css",
     "static/js/main.c775c751.chunk.js"
   ]
 }
