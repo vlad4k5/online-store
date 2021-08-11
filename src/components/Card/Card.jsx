@@ -1,11 +1,10 @@
 import { useContext } from "react"
 import { AppContext } from "../../App"
 import s from "./Card.module.scss"
-import liked from "../../assets/img/liked.svg" // Заглушка
-import unliked from "../../assets/img/unliked.svg" // Заглушка
-import plus from "../../assets/img/plus.svg" // Заглушка
-import checkedBtn from "../../assets/img/btn_checked.svg" // Заглушка
-import sneakers from "../../assets/img/1.jpg" // Заглушка
+import liked from "../../assets/img/liked.svg" 
+import unliked from "../../assets/img/unliked.svg" 
+import plus from "../../assets/img/plus.svg" 
+import checkedBtn from "../../assets/img/btn_checked.svg" 
 
 const Card = ({ itemId, price, title, imgUrl, onFavorite, onPlus }) => {
 
@@ -29,7 +28,7 @@ const Card = ({ itemId, price, title, imgUrl, onFavorite, onPlus }) => {
             onClick={onClickFavorite}
         />
 
-        <img className={s.sneakersImg} width={133} height={112} alt="Sneakers" src={sneakers} />
+        <img className={s.sneakersImg} width={133} height={112} alt="Sneakers" src={imgUrl} />
 
         <p>{title}</p>
 

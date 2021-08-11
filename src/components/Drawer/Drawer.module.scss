@@ -28,7 +28,7 @@
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.1);
@@ -146,7 +146,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 600px;
+  height: 60vh;
 }
 
 .infoBlock {
@@ -255,10 +255,8 @@
     }
   }
 
-  // Дальше не менял
-
   .infoWrapper {
-    height: 100vh;
+    height: 80vh;
   }
 
   .infoBlock {
@@ -288,7 +286,7 @@
     button {
       @include green_button(100%, -5px);
       height: 35px;
-      padding: 0 35px 0 45px; // not sure
+      padding: 0 35px 0 45px;
       font-size: 12px;
     }
 

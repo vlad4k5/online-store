@@ -14,7 +14,7 @@ body {
 .wrapper {
   background-color: #ffffff;
   max-width: 1080px;
-  min-height: 100vh;
+  min-height: 90vh;
   margin: 50px auto 0px auto;
   border-radius: 20px;
 }
@@ -80,28 +80,27 @@ body {
   .wrapper {
     margin: 0px;
     border-radius: 0px;
+    min-height: 100vh;
   }
   .content {
     padding: 15px;
     justify-items: center;
     h1 {
       margin: 0;
-      font-size: 16px;
+      font-size: 18px;
       margin: 15px;
-      overflow: auto;
     }
     .page_title {
       margin-bottom: 40px;
       padding-left: 20px;
     }
     .title_img {
-      position: relative;
+      width: 28px;
+      height: 28px;
       top: 7px;
       left: -20px;
-      cursor: pointer;
     }
   }
-  // дошел до сюда
 
   .sneakers {
     grid-template-columns: 1fr 1fr;

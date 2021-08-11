@@ -7,7 +7,6 @@ import removeBtn from "../../assets/img/btn_remove.svg"
 import arrowRight from "../../assets/img/arrow_right.svg"
 import orderSuccess from "../../assets/img/order_success.svg"
 import emptyBox from "../../assets/img/empty_box.svg"
-import sneakers from "../../assets/img/1.jpg" // Заглушка кроссовок, 49 строка было item.imgUrl в src
 
 
 const Drawer = ({ onClose, items = [], onRemove, setCartItems, opened }) => {
@@ -46,7 +45,7 @@ const Drawer = ({ onClose, items = [], onRemove, setCartItems, opened }) => {
 
                     <div className={s.items}>
                         {items.map(item => <div className={s.cartItem} key={item.id}>
-                            <img className={s.cartImage} alt="sneakers" src={sneakers} /> 
+                            <img className={s.cartImage} alt="sneakers" src={item.imgUrl} /> 
                             <div>
                                 <p>{item.title}</p>
                                 <b>{item.price} грн.</b>
@@ -80,7 +79,10 @@ const Drawer = ({ onClose, items = [], onRemove, setCartItems, opened }) => {
                         imgHeight={120}
                         title={"Заказ оформлен!"}
                         description={`Ваш заказ #${orderId} скоро будет передан курьерской доставке`}
-                        onClose={onClose}
+                        onClose={() => {
+                            onClose()
+                            setIsOrderCompleted(false)
+                        }}
                         image={orderSuccess}
                     />
                     :

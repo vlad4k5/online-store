@@ -8,7 +8,6 @@ header {
   justify-content: space-between;
   padding: 41px 63px 44px 45px;
   border-bottom: 1px solid #eaeaea;
-
   h3,
   p {
     margin: 0;
@@ -69,7 +68,11 @@ header {
 @media screen and (max-width: 420px) {
   header {
     padding: 20px 0px 20px 10px;
-
+    position: sticky;
+    background-color: #ffffff;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
     h3 {
       font-size: 14px;
       line-height: 16px;

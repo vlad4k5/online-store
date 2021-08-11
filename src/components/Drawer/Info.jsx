@@ -10,4 +10,5 @@ const Info = ({ imgWidth, imgHeight, title, description, onClose, image }) => {
         <Link to="/"><button onClick={onClose}><img alt="Arrow" src={leftArrow} className={s.arrow} />Вернуться к покупкам</button></Link>
     </div>
 }
+
 export default Info
