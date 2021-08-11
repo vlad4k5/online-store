@@ -3,6 +3,12 @@ import { useContext, useState } from "react";
 import { AppContext } from "../../App";
 import s from "./Drawer.module.scss"
 import Info from "./Info";
+import removeBtn from "../../assets/img/btn_remove.svg"
+import arrowRight from "../../assets/img/arrow_right.svg"
+import orderSuccess from "../../assets/img/order_success.svg"
+import emptyBox from "../../assets/img/empty_box.svg"
+import sneakers from "../../assets/img/1.jpg" // Заглушка кроссовок, 49 строка было item.imgUrl в src
+
 
 const Drawer = ({ onClose, items = [], onRemove, setCartItems, opened }) => {
 
@@ -33,19 +39,19 @@ const Drawer = ({ onClose, items = [], onRemove, setCartItems, opened }) => {
     return <div className={`${s.overlay} ${opened && s.overlayVisible}`} onClick={onClose}>
 
         <div className={s.drawer} onClick={(e) => { e.stopPropagation() }}>
-            <h2 className={s.cartTitle}>Корзина <img alt="Close" src={"img/btn_remove.svg"} onClick={onClose} /></h2>
+            <h2 className={s.cartTitle}>Корзина <img alt="Close" src={removeBtn} onClick={onClose} /></h2>
             {items.length !== 0
                 ?
                 <div className={s.main}>
 
                     <div className={s.items}>
                         {items.map(item => <div className={s.cartItem} key={item.id}>
-                            <img className={s.cartImage} alt="sneakers" src={item.imgUrl} />
+                            <img className={s.cartImage} alt="sneakers" src={sneakers} /> 
                             <div>
                                 <p>{item.title}</p>
                                 <b>{item.price} грн.</b>
                             </div>
-                            <img src={"img/btn_remove.svg"} alt="Remove" className={s.btn_remove} onClick={() => onRemove(item.id)} />
+                            <img src={removeBtn} alt="Remove" className={s.btn_remove} onClick={() => onRemove(item.id)} />
                         </div>
                         )}
                     </div>
@@ -62,7 +68,7 @@ const Drawer = ({ onClose, items = [], onRemove, setCartItems, opened }) => {
                             <b>{discount} грн.</b>
                         </li>
                         <button onClick={onClickOrder} className={s.btn_order}>
-                            Оформить заказ<img src={"img/arrow_right.svg"} alt="Arrow" className={s.orderArrow} />
+                            Оформить заказ<img src={arrowRight} alt="Arrow" className={s.orderArrow} />
                         </button>
                     </ul>
 
@@ -75,7 +81,7 @@ const Drawer = ({ onClose, items = [], onRemove, setCartItems, opened }) => {
                         title={"Заказ оформлен!"}
                         description={`Ваш заказ #${orderId} скоро будет передан курьерской доставке`}
                         onClose={onClose}
-                        image="img/order_success.svg"
+                        image={orderSuccess}
                     />
                     :
                     <Info
@@ -84,7 +90,7 @@ const Drawer = ({ onClose, items = [], onRemove, setCartItems, opened }) => {
                         title={"Корзина пустая"}
                         description={"Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ."}
                         onClose={onClose}
-                        image="img/empty_box.svg"
+                        image={emptyBox}
                     />
             }
         </div>

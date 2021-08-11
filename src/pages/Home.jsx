@@ -1,5 +1,7 @@
 import Card from "../components/Card/Card"
 import LoadingCard from "../components/Card/LoadingCard"
+import searchIcon from "../assets/img/search.svg"
+import removeBtn from "../assets/img/btn_remove.svg"
 
 const Home = ({ searchValue, items, onAddToFavorites, onAddToCart, setSearchValue, onChangeSearchInput, isLoading }) => {
 
@@ -10,8 +12,8 @@ const Home = ({ searchValue, items, onAddToFavorites, onAddToCart, setSearchValu
                 <h1 id="content-title">{searchValue ? `Поиск по "${searchValue}":` : "Все кроссовки"}</h1>
             </div>
             <div className="search-block">
-                <img alt="Search" src="img/search.svg" />
-                {searchValue && <img alt="Delete" src="img/btn_remove.svg" className="clearSearch" onClick={() => setSearchValue("")} />}
+                <img alt="Search" className="search" src={searchIcon} />
+                {searchValue && <img alt="Delete" src={removeBtn} className="clearSearch" onClick={() => setSearchValue("")} />}
                 <input placeholder="Поиск..." onChange={onChangeSearchInput} value={searchValue} />
             </div>
         </div>

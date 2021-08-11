@@ -81,4 +81,58 @@ body {
     margin: 0px;
     border-radius: 0px;
   }
+  .content {
+    padding: 15px;
+    justify-items: center;
+    h1 {
+      margin: 0;
+      font-size: 16px;
+      margin: 15px;
+      overflow: auto;
+    }
+    .page_title {
+      margin-bottom: 40px;
+      padding-left: 20px;
+    }
+    .title_img {
+      position: relative;
+      top: 7px;
+      left: -20px;
+      cursor: pointer;
+    }
+  }
+
+  .sneakers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+  }
+
+  .search-wrapper {
+    margin-bottom: 5px;
+    flex-direction: column-reverse;
+  }
+  .search-block {
+    height: 30px;
+    max-width: 230px;
+
+    input {
+      border: 0;
+      padding: 5px;
+      font-size: 10px;
+      line-height: 12px;
+    }
+
+    .search {
+      width: 13px;
+      height: 13px;
+      align-self: center;
+    }
+
+    .clearSearch {
+      width: 14px;
+      height: 14px;
+      top: 8px;
+    }
+  }
 }

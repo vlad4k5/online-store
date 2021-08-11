@@ -68,6 +68,55 @@ header {
 
 @media screen and (max-width: 420px) {
   header {
+    padding: 20px 0px 20px 10px;
+
+    h3 {
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
+  .imgLogo {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  .headerRight {
+    padding: 0 10px 0 10px;
+    margin: 0px;
+    li {
+      line-height: 17px;
+      margin-left: 15px;
+    }
+    li:first-child {
+      margin-left: 0px;
+    }
+    li:last-child {
+      margin-left: 20px;
+    }
+
+    img {
+      width: 15px;
+      height: 15px;
+    }
+
+    span {
+      top: -3.5px;
+      padding-left: 5px;
+      font-size: 10px;
+      line-height: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  header {
     padding: 15px 0px 15px 8px;
 
     h3 {
@@ -113,52 +162,3 @@ header {
     }
   }
 }
-
-// @media screen and (max-width: 420px) {
-//   header {
-//     padding: 20px 0px 20px 10px;
-
-//     h3 {
-//       font-size: 14px;
-//       line-height: 16px;
-//     }
-
-//     p {
-//       font-size: 12px;
-//       line-height: 15px;
-//     }
-//   }
-
-//   .imgLogo {
-//     width: 30px;
-//     height: 30px;
-//     margin-right: 10px;
-//   }
-
-//   .headerRight {
-//     padding: 0 10px 0 10px;
-//     margin: 0px;
-//     li {
-//       line-height: 17px;
-//       margin-left: 15px;
-//     }
-//     li:first-child {
-//       margin-left: 0px;
-//     }
-//     li:last-child {
-//       margin-left: 20px;
-//     }
-
-//     img {
-//       width: 15px;
-//       height: 15px;
-//     }
-
-//     span {
-//       top: -3.5px;
-//       padding-left: 5px;
-//       font-size: 10px;
-//       line-height: 10px;
-//     }
-//   }
-// }
