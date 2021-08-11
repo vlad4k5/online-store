@@ -5,6 +5,9 @@ import Card from "../components/Card/Card"
 import Info from "../components/Drawer/Info"
 import s from "../components/Drawer/Drawer.module.scss"
 import LoadingCard from "../components/Card/LoadingCard"
+import backBtn from "../assets/img/btn_back.svg"
+import emojiNoOrders from "../assets/img/emoji_no_orders.jpg"
+
 
 const Orders = ({ onFavorite, onPlus }) => {
 
@@ -27,14 +30,14 @@ const Orders = ({ onFavorite, onPlus }) => {
     return <div className="content">
 
         {isLoading && <div>
-            <h1 className="page_title"><Link to="/"><img src="img/btn_back.svg" alt="Back" className="title_img" /></Link>Закладки</h1>
+            <h1 className="page_title"><Link to="/"><img src={backBtn} alt="Back" className="title_img" /></Link>Закладки</h1>
             <div className="sneakers">
                 {[...Array(5)].map((i, index) => <LoadingCard key={index} />)}
             </div>
         </div>}
 
         {orders.length ? <>
-            <h1 className="page_title"><Link to="/"><img src="img/btn_back.svg" alt="Back" className="title_img" /></Link>Мои покупки</h1>
+            <h1 className="page_title"><Link to="/"><img src={backBtn} alt="Back" className="title_img" /></Link>Мои покупки</h1>
             {orders.map(order => {
                 const orderItems = order.items.map(
                     i => <Card
@@ -56,7 +59,7 @@ const Orders = ({ onFavorite, onPlus }) => {
                 imgHeight={70}
                 title={"У вас нет заказов"}
                 description={"Вы еще ничего не покупали"}
-                image={"img/emoji_no_orders.jpg"}
+                image={emojiNoOrders}
                 onClose={() => { <Redirect exact to="/favorites" /> }}
             />
         </div>}

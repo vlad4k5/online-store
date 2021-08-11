@@ -1,24 +1,21 @@
-.card{
+.card {
   padding: 25px;
-  min-width: 210px;
-  height: 260px;
-  background: #FFFFFF;
-  border: 1px solid #F3F3F3;
+  background: #ffffff;
+  border: 1px solid #f3f3f3;
   border-radius: 40px;
   align-items: center;
-  &:hover{
-    border: 1px solid #F8F8F8;
+  &:hover {
+    border: 1px solid #f8f8f8;
     box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.05);
     transition: 0.2s;
     transform: translateY(-5px);
   }
 
-  .favorite{
+  .favorite {
     position: absolute;
     cursor: pointer;
   }
 }
-
 
 .card_Bottom {
   display: flex;
@@ -29,10 +26,36 @@
   }
 }
 
-.card_Bottom_price{
+.card_Bottom_price {
   margin: 0;
   font-weight: 500;
   font-size: 11px;
   line-height: 13px;
-  color: #BDBDBD;
+  color: #bdbdbd;
+}
+
+@media screen and (max-width: 420px) {
+  .card {
+    padding: 15px;
+    border-radius: 20px;
+  }
+
+  .card_Bottom {
+    b {
+      font-size: 13px;
+    }
+  }
+
+  .card_Bottom_price {
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+  .sneakersImg {
+    width: calc(100%);
+    height: auto;
+  }
 }

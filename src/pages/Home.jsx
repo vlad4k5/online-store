@@ -3,6 +3,7 @@ import LoadingCard from "../components/Card/LoadingCard"
 import searchIcon from "../assets/img/search.svg"
 import removeBtn from "../assets/img/btn_remove.svg"
 
+
 const Home = ({ searchValue, items, onAddToFavorites, onAddToCart, setSearchValue, onChangeSearchInput, isLoading }) => {
 
     return <div className="content">

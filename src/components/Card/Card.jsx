@@ -1,7 +1,11 @@
 import { useContext } from "react"
 import { AppContext } from "../../App"
 import s from "./Card.module.scss"
-
+import liked from "../../assets/img/liked.svg" // Заглушка
+import unliked from "../../assets/img/unliked.svg" // Заглушка
+import plus from "../../assets/img/plus.svg" // Заглушка
+import checkedBtn from "../../assets/img/btn_checked.svg" // Заглушка
+import sneakers from "../../assets/img/1.jpg" // Заглушка
 
 const Card = ({ itemId, price, title, imgUrl, onFavorite, onPlus }) => {
 
@@ -19,13 +23,13 @@ const Card = ({ itemId, price, title, imgUrl, onFavorite, onPlus }) => {
     return <div className={s.card}>
 
         <img
-            src={isItemFavorite(itemId) ? "img/liked.svg" : "img/unliked.svg"}
+            src={isItemFavorite(itemId) ? liked : unliked}
             alt="Unliked"
             className={s.favorite}
             onClick={onClickFavorite}
         />
 
-        <img width={133} height={112} alt="Sneakers" src={imgUrl} />
+        <img className={s.sneakersImg} width={133} height={112} alt="Sneakers" src={sneakers} />
 
         <p>{title}</p>
 
@@ -36,7 +40,7 @@ const Card = ({ itemId, price, title, imgUrl, onFavorite, onPlus }) => {
                 <b>{price} грн.</b>
             </div>
             <div>
-                <img onClick={onClickPlus} width={32} height={32} src={isItemAdded(itemId) ? "img/btn_checked.svg" : "img/plus.svg"} alt="add item" className={s.plus} />
+                <img onClick={onClickPlus} width={32} height={32} src={isItemAdded(itemId) ? checkedBtn : plus} alt="add item" className={s.plus} />
             </div>
         </div>
 
