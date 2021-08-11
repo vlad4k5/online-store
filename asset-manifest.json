@@ -1,22 +1,29 @@
 {
   "files": {
-    "main.css": "/online-store/static/css/main.72e19a23.chunk.css",
-    "main.js": "/online-store/static/js/main.c775c751.chunk.js",
-    "main.js.map": "/online-store/static/js/main.c775c751.chunk.js.map",
+    "main.css": "/online-store/static/css/main.65f7c871.chunk.css",
+    "main.js": "/online-store/static/js/main.2f4cd2e8.chunk.js",
+    "main.js.map": "/online-store/static/js/main.2f4cd2e8.chunk.js.map",
     "runtime-main.js": "/online-store/static/js/runtime-main.116c8d1b.js",
     "runtime-main.js.map": "/online-store/static/js/runtime-main.116c8d1b.js.map",
     "static/js/2.9388e42c.chunk.js": "/online-store/static/js/2.9388e42c.chunk.js",
     "static/js/2.9388e42c.chunk.js.map": "/online-store/static/js/2.9388e42c.chunk.js.map",
     "index.html": "/online-store/index.html",
-    "static/css/main.72e19a23.chunk.css.map": "/online-store/static/css/main.72e19a23.chunk.css.map",
+    "static/css/main.65f7c871.chunk.css.map": "/online-store/static/css/main.65f7c871.chunk.css.map",
     "static/js/2.9388e42c.chunk.js.LICENSE.txt": "/online-store/static/js/2.9388e42c.chunk.js.LICENSE.txt",
+    "static/media/1.2444684c.jpg": "/online-store/static/media/1.2444684c.jpg",
+    "static/media/arrow_left.ac63c7c4.svg": "/online-store/static/media/arrow_left.ac63c7c4.svg",
+    "static/media/arrow_right.fc322251.svg": "/online-store/static/media/arrow_right.fc322251.svg",
+    "static/media/btn_remove.152f2fcf.svg": "/online-store/static/media/btn_remove.152f2fcf.svg",
     "static/media/cart.5113b08f.svg": "/online-store/static/media/cart.5113b08f.svg",
-    "static/media/heart.6f208ae4.svg": "/online-store/static/media/heart.6f208ae4.svg"
+    "static/media/empty_box.1d435b52.svg": "/online-store/static/media/empty_box.1d435b52.svg",
+    "static/media/heart.6f208ae4.svg": "/online-store/static/media/heart.6f208ae4.svg",
+    "static/media/order_success.9a1a3e50.svg": "/online-store/static/media/order_success.9a1a3e50.svg",
+    "static/media/search.48c52bf5.svg": "/online-store/static/media/search.48c52bf5.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.116c8d1b.js",
     "static/js/2.9388e42c.chunk.js",
-    "static/css/main.72e19a23.chunk.css",
-    "static/js/main.c775c751.chunk.js"
+    "static/css/main.65f7c871.chunk.css",
+    "static/js/main.2f4cd2e8.chunk.js"
   ]
 }
