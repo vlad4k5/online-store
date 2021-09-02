@@ -2,7 +2,7 @@ import ContentLoader from "react-content-loader"
 import s from "./Card.module.scss"
 
 const LoadingCard = () => {
-    return <div className={s.card}>
+    return window.innerWidth > 600 ? <div className={s.card}>
         <ContentLoader
             speed={2}
             width={150}
@@ -18,6 +18,6 @@ const LoadingCard = () => {
             <rect x="0" y="155" rx="8" ry="8" width="80" height="25" />
             <rect x="118" y="150" rx="8" ry="8" width="32" height="32" />
         </ContentLoader>
-    </div>
+    </div>: null
 }
 export default LoadingCard
